@@ -1,3 +1,5 @@
+require_relative 'handlers/hug'
+
 Lita.configure do |config|
   # The name your robot will use.
   config.robot.name = "staxly"
