@@ -1,2 +1,2 @@
-# lita
-Fun with the Lita bot
+# staxly
+OpenStax chat bot based on Lita
