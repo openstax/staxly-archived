@@ -2,7 +2,7 @@ require_relative 'handlers/hug'
 
 Lita.configure do |config|
   # The name your robot will use.
-  config.robot.name = "staxly"
+  config.robot.name = 'staxly'
 
   # The locale code for the language to use.
   # config.robot.locale = :en
@@ -15,7 +15,7 @@ Lita.configure do |config|
   # An array of user IDs that are considered administrators. These users
   # the ability to add and remove other users from authorization groups.
   # What is considered a user ID will change depending on which adapter you use.
-  # config.robot.admins = ["1", "2"]
+  config.robot.admins = JSON.parse(ENV['LITA_ADMINS'] || '[]')
 
   # The adapter you want to connect with. Make sure you've added the
   # appropriate gem to the Gemfile.

@@ -4,6 +4,8 @@ ruby "2.2.3"
 gem "lita"
 gem "lita-slack"
 
+gem "json"
+
 # Uncomment to use the HipChat adapter
 # gem "lita-hipchat"
 
