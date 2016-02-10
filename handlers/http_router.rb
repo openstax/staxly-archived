@@ -1,6 +1,8 @@
 module Lita
   module Handlers
     class HttpRouter < Handler
+      cattr_accessor :default_command
+
       config :token
 
       def self.register_command(command, klass)
@@ -12,7 +14,7 @@ module Lita
       end
 
       def run(command, args)
-        klass = self.class.commands[command.to_s]
+        klass = self.class.commands[command.to_s] || self.class.default_command
         return if klass.nil?
         klass.new.run(args)
       end
