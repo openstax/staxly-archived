@@ -1,16 +1,18 @@
 module Lita
   module Handlers
     class HttpRouter < Handler
-      cattr_accessor :default_command
-
       config :token
 
-      def self.register_command(command, klass)
-        commands[command.to_s] = klass
-      end
+      class << self
+        attr_accessor :default_command
 
-      def self.commands
-        @@commands ||= {}
+        def register_command(command, klass)
+          commands[command.to_s] = klass
+        end
+
+        def commands
+          @@commands ||= {}
+        end
       end
 
       def run(command, args)

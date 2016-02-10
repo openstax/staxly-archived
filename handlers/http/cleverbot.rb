@@ -5,7 +5,9 @@ module Lita
         API = ::CleverBot.new
 
         def run(args)
-          API.think args
+          resp = API.think args
+          puts resp
+          resp
         end
 
         HttpRouter.default_command = self
