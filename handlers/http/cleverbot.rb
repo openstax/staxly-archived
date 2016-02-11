@@ -6,8 +6,8 @@ module Lita
       class Cleverbot
         CLIENT = ::Cleverbot::Client.new
 
-        def run(args)
-          CLIENT.write args
+        def run(command, args)
+          CLIENT.write "#{command} #{args}"
         end
 
         HttpRouter.default_command = self

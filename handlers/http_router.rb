@@ -18,7 +18,7 @@ module Lita
       def run(command, args)
         klass = self.class.commands[command.to_s] || self.class.default_command
         return if klass.nil?
-        klass.new.run(args)
+        klass.new.run(command, args)
       end
 
       def json_response(object)

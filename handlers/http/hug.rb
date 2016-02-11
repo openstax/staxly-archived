@@ -2,7 +2,7 @@ module Lita
   module Handlers
     module Http
       class Hug
-        def run(args)
+        def run(command, args)
           "༼ つ ◕_◕ ༽つ #{args}"
         end
 
