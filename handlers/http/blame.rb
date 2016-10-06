@@ -1,7 +1,7 @@
 module Lita
   module Handlers
     module Http
-      class Hug
+      class Blame
         def run(command, args)
           "It's all #{args}'s fault!'"
         end
