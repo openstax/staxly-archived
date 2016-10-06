@@ -3,7 +3,7 @@ module Lita
     module Http
       class Hug
         def run(command, args)
-          "༼ つ ◕_◕ ༽つ #{args}"
+          "It's all #{args}'s fault!'"
         end
 
         HttpRouter.register_command(name, self)

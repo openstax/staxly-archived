@@ -7,7 +7,7 @@ module Lita
         attr_accessor :default_command
 
         def register_command(command, klass)
-          commands[command.to_s] = klass
+          commands[command.to_s.downcase] = klass
         end
 
         def commands
@@ -16,7 +16,7 @@ module Lita
       end
 
       def run(command, args)
-        klass = self.class.commands[command.to_s] || self.class.default_command
+        klass = self.class.commands[command.to_s.downcase] || self.class.default_command
         return if klass.nil?
         klass.new.run(command, args)
       end
@@ -32,7 +32,9 @@ module Lita
 
       http.post "/" do |request, response|
         name, command, args = request[:text].to_s.split(' ', 3)
-        next unless name.include?(Lita.config.robot.name) && request[:token] == config.token
+        next if name.nil? ||
+                !name.include?(Lita.config.robot.name) ||
+                request[:token] != config.token
         response.headers["Content-Type"] = "application/json"
         response.body << json_response(run(command, args))
       end
