@@ -6,7 +6,7 @@ module Lita
           "༼ つ ◕_◕ ༽つ #{args}"
         end
 
-        HttpRouter.register_command(name, self)
+        HttpRouter.register self
       end
     end
   end

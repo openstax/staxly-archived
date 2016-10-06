@@ -6,7 +6,7 @@ module Lita
           "It's all #{args}'s fault!'"
         end
 
-        HttpRouter.register_command(name, self)
+        HttpRouter.register self
       end
     end
   end

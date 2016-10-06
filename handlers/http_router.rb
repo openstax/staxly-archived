@@ -6,8 +6,9 @@ module Lita
       class << self
         attr_accessor :default_command
 
-        def register_command(command, klass)
-          commands[command.to_s.downcase] = klass
+        def register(klass)
+          command = klass.name.split('::').last.downcase
+          commands[command] = klass
         end
 
         def commands
