@@ -16,5 +16,3 @@ gem "json"
 # For example:
 # gem "lita-google-images"
 # gem "lita-karma"
-
-gem 'cleverbot', github: 'sapslaj/cleverbot'
