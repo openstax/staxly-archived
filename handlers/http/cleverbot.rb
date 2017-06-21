@@ -10,7 +10,7 @@ module Lita
           CLIENT.say "#{command} #{args}"
         end
 
-        HttpRouter.default_command = self
+        #HttpRouter.default_command = self
       end
     end
   end
