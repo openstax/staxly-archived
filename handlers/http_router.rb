@@ -34,7 +34,7 @@ module Lita
       http.post "/" do |request, response|
         name, command, args = request[:text].to_s.split(' ', 3)
         next if name.nil? ||
-                !name.include?(Lita.config.robot.name) ||
+                !name.downcase.include?(Lita.config.robot.name.downcase) ||
                 request[:token] != config.token
         response.headers["Content-Type"] = "application/json"
         response.body << json_response(run(command, args))
